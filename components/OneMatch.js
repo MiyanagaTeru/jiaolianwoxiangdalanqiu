@@ -5,7 +5,6 @@ import vsImage from '../assets/vs.png';
 import { setWinner, switchGameDone } from '../actions/bracket';
 import { calculateScore } from '../actions/people';
 
-
 const isLeading = (number, arr) => arr.includes(number);
 
 @connect(
@@ -50,7 +49,10 @@ class OneMatch extends React.PureComponent {
               }
               </td>
               <td className={styles.middle}>
-                <img className={styles.vsImage} src={vsImage}/>
+                {
+                  vsImage ?
+                    <img className={styles.vsImage} src={vsImage}/> : 'VS'
+                }
               </td>
               <td
                 className={`${styles.right} ${winner === 'right' ? styles.pop : ''}`}
