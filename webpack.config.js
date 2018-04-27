@@ -34,6 +34,12 @@ module.exports = {
           require.resolve('css-loader') + '?sourceMap&modules&importLoaders=1&localIdentName=[name]_[local]__[hash:base64:3]!postcss-loader',
           require.resolve('sass-loader') + '?sourceMap'
         ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        loaders: [
+          'file-loader'
+        ]
       }
     ]
   },
